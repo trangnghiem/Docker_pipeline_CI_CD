@@ -1,0 +1,6 @@
+FROM debian:latest
+RUN apt-get update && apt-get install python3-pip -y && pip install requests
+ADD test_authorization.py /test_authorization/test_authorization.py
+WORKDIR /test_authorization/
+CMD python3 test_authorization.py
+

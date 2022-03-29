@@ -1,0 +1,6 @@
+FROM debian:latest
+RUN apt-get update && apt-get install python3-pip -y && pip install requests
+ADD test_authentication.py /test_authentication/test_authentication.py
+WORKDIR /test_authentication/
+CMD python3 test_authentication.py
+

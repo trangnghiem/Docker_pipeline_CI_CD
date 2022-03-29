@@ -1,0 +1,320 @@
+
+Test authentication :http://172.28.1.1:8000/permissions
+alice
+{'username': 'alice', 'permissions': ['v1', 'v2']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+bob
+{'username': 'bob', 'permissions': ['v1']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+alice
+{'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+alice
+{'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+bob
+{'username': 'bob', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+bob
+{'detail': 'This service is not included in your plan.'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+that sucks
+-0.3612
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+that sucks
+-0.3612
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+that sucks
+-0.3612
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+that sucks
+-0.3612
+
+Test authentication :http://172.28.1.1:8000/permissions
+alice
+{'username': 'alice', 'permissions': ['v1', 'v2']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+bob
+{'username': 'bob', 'permissions': ['v1']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+alice
+{'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+alice
+{'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+bob
+{'username': 'bob', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+bob
+{'detail': 'This service is not included in your plan.'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+alice
+{'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+alice
+{'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+bob
+{'username': 'bob', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+bob
+{'detail': 'This service is not included in your plan.'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+that sucks
+-0.3612
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+that sucks
+-0.3612
+
+Test authentication :http://172.28.1.1:8000/permissions
+alice
+{'username': 'alice', 'permissions': ['v1', 'v2']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+bob
+{'username': 'bob', 'permissions': ['v1']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+life is beautiful
+0.5994
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v1/sentiment
+alice
+that sucks
+-0.3612
+
+Test de l'analyse du contenu : http://172.28.1.1:8000/v2/sentiment
+alice
+that sucks
+-0.3612
+
+Test authentication :http://172.28.1.1:8000/permissions
+alice
+{'username': 'alice', 'permissions': ['v1', 'v2']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+bob
+{'username': 'bob', 'permissions': ['v1']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+alice
+{'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+alice
+{'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+bob
+{'username': 'bob', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+bob
+{'detail': 'This service is not included in your plan.'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test authentication :http://172.28.1.1:8000/permissions
+alice
+{'username': 'alice', 'permissions': ['v1', 'v2']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+bob
+{'username': 'bob', 'permissions': ['v1']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test authentication :http://172.28.1.1:8000/permissions
+alice
+{'username': 'alice', 'permissions': ['v1', 'v2']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+bob
+{'username': 'bob', 'permissions': ['v1']}
+200 : SUCCESS
+
+Test authentication :http://172.28.1.1:8000/permissions
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+alice
+{'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+alice
+{'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+bob
+{'username': 'bob', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+200 : SUCCESS
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+bob
+{'detail': 'This service is not included in your plan.'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v1/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
+
+Test d'authorization http://172.28.1.1:8000/v2/sentiment
+clementine
+{'detail': 'Authentication failed'}
+403 : FAILURE
